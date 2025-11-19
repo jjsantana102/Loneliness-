@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loneliness in the Digital Age</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #faf8ff;
+      --primary: #304ffe;
+      --accent: #ffb300;
+      --text: #222222;
+      --muted: #666666;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: radial-gradient(circle at top left, #c5d7ff, #0d1b4c);
+      color: white;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 0.3rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      max-width: 600px;
+      color: #e3e8ff;
+      margin-bottom: 1.4rem;
+    }
+
+    .tagline {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      color: #fcefff;
+    }
+
+    .scroll-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: white;
+      color: #0d1b4c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+    }
+
+    .scroll-btn span {
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: -2.5rem auto 3rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.8rem 1.6rem;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
+    }
+
+    section.highlight {
+      border: 2px solid var(--accent);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0.4rem 0;
+      font-size: 0.98rem;
+    }
+
+    .cite {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figure img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+    }
+
+    figure figcaption {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 14px;
+      border: none;
+      min-height: 260px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.08rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(48, 79, 254, 0.08);
+      color: var(--primary);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .personal {
+      border-left: 4px solid var(--primary);
+    }
+
+    .works-cited p {
+      font-size: 0.88rem;
+      margin: 0.2rem 0 0.45rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="tagline">College Writing · Project 4</div>
+      <h1>Loneliness in the Digital Age</h1>
+      <p class="subtitle">
+        Why is loneliness rising in a time when we’re more “connected” than
+        ever through technology, and how can we fix it?
+      </p>
+      <a href="#background" class="scroll-btn">
+        Start Exploring <span>↓</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: Background -->
+    <section id="background">
+      <span class="pill">Background</span>
+      <h2>
+        What Is Loneliness and Why Is It Rising in a Technology-Driven Society?
+      </h2>
+      <div class="two-col">
+        <div>
+          <p>
+            Loneliness has become one of the biggest problems our generation
+            and future generations face, even though nobody truly wants to
+            admit it. According to the U.S. Surgeon General, over “60% of young
+            adults feel lonely regularly,” despite the fact we live in an era
+            that is defined by technology and constant connection (U.S. Surgeon
+            General). This raises the important question: Why is loneliness
+            rising in a time where people are connected more than ever? What is
+            causing this shift, and what can we do to combat this issue? Even
+            though technology gives us unlimited access to social media, our
+            genuine relationships have lost depth and meaning.
+          </p>
+          <p>
+            Loneliness isn’t just being alone. Psychology Today defines it as
+            “the feeling that your actual level of connection does not match the
+            level of connection you want” (Psychology Today). That means you can
+            be in a group chat, have hundreds of followers, and still feel
+            deeply disconnected. Today, heavy social media use replaces
+            face-to-face conversations, and community spaces like parks, clubs,
+            and hangouts are disappearing. People feel pressure to appear happy,
+            successful, and put-together online, which turns their lives into a
+            performance instead of honest connection. Technology has increased
+            the number of people we talk to, but not the <strong>depth</strong>
+            of those relationships.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="https://images.pexels.com/photos/5952655/pexels-photo-5952655.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Person sitting alone on bed looking at their phone"
+          />
+          <figcaption>
+            Over 60% of young adults report feeling lonely regularly, even in a
+            hyper-connected digital world (U.S. Surgeon General, 2023).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Digital Connections -->
+    <section id="digital">
+      <span class="pill">Digital Connections</span>
+      <h2>How Are Digital Connections Making People More Isolated?</h2>
+      <div class="two-col">
+        <div>
+          <p>
+            The new digital communication plays a crucial role in why people
+            feel so isolated in such a connected world. Sherry Turkle, an
+            American sociologist, explains that “people can have hundreds of
+            online friends and still feel alone” because online interaction is
+            not a strong, in-depth interaction (Turkle,
+            <em>Reclaiming Conversation</em>). In her TED Talk, Turkle says that
+            we have all become “alone together,” where everyone is physically
+            present but mentally in a different world on their phone (Turkle,
+            “Connected, but Alone?”).
+          </p>
+          <p>
+            Social media leads to comparison and competition: Who is traveling
+            more? Who looks better? Whose life seems perfect? The more people
+            swipe their finger up, the more they feel like they aren’t good
+            enough. Algorithms on social media are designed to keep us trapped
+            online, not to make us feel content with life. This leads to
+            anxiety, depression, poor self-esteem, and emotional disconnection,
+            leaving people feeling even more isolated even when their phone is
+            blowing up with notifications (Twenge and Campbell).
+          </p>
+        </div>
+        <figure>
+          <iframe
+            src="https://www.youtube.com/embed/t7Xr3AsBEK4"
+            title="Sherry Turkle: Connected, but alone?"
+            allowfullscreen
+          ></iframe>
+          <figcaption>
+            Sherry Turkle explains how technology can make us “alone together”
+            even when we’re surrounded by people.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Other Factors -->
+    <section id="factors">
+      <span class="pill">Context</span>
+      <h2>What Other Factors Contribute to the Loneliness Epidemic?</h2>
+      <div class="two-col">
+        <div>
+          <p>
+            In addition to the development of technology and social media, there
+            are also societal factors behind rising loneliness in the world.
+            Killgore’s psychiatry research shows that loneliness “rose sharply
+            during the 2020 COVID-19 pandemic and stayed high afterward”
+            (Killgore et al.). During the pandemic, interactions changed as we
+            knew it—schools turned to Zoom, work went remote, and everyone’s
+            social life moved online. Pew Research found that loneliness among
+            Gen Z increased by a whopping 40% after 2020. The face-to-face human
+            interactions that made people feel grounded—classroom conversations,
+            walking with friends, going out for lunch, and even talking to
+            coworkers—were stripped away.
+          </p>
+          <p>
+            Now, post-pandemic, cities and towns promote more independent
+            lifestyles, with fewer shared spaces and fast-paced environments
+            that leave little to no room for building meaningful relationships.
+            Emotional burnout from constant notifications and digital
+            overstimulation also makes it harder to connect in meaningful ways.
+            Many people fear rejection, so they avoid vulnerability, which
+            increases loneliness. As a result, people are less present, less
+            self-aware, and less likely to prioritize real connections.
+          </p>
+        </div>
+        <figure>
+          <!-- Placeholder chart image; replace with your own if you want -->
+          <img
+            src="https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Abstract chart representing rising loneliness"
+          />
+          <figcaption>
+            Loneliness surged during COVID-19 and has remained elevated,
+            especially among Gen Z (Killgore et al., 2020; Pew Research Center,
+            2023).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Solutions -->
+    <section id="solutions" class="highlight">
+      <span class="pill">Solutions</span>
+      <h2>
+        How Can Individuals, Communities, and Tech Companies Help Heal
+        Loneliness?
+      </h2>
+
+      <h3>A. What Can Individuals Do?</h3>
+      <p>
+        Surgeon General Vivek Murthy has stated, “To heal loneliness, we must
+        replace screen time with shared time” (Murthy, 2022). This means putting
+        the phone down and going out of your way to spend face-to-face time with
+        people, volunteering, or being open in conversations. One of the
+        strongest ways to build authentic connection is through being
+        vulnerable.
+      </p>
+
+      <h3>B. What Can Communities Do?</h3>
+      <p>
+        Murthy also says, “Community is the medicine for isolation” (Murthy,
+        2023). If communities create inclusive events, are transparent in mental
+        health conversations, and set up spaces that encourage interaction,
+        fewer people will feel isolated. Schools, workplaces, and neighborhoods
+        can all play a role in rebuilding that sense of belonging.
+      </p>
+
+      <h3>C. What Can Technology Companies Do?</h3>
+      <p>
+        Big technology companies also share responsibility in combating
+        loneliness—not just users and their communities. Twenge and Campbell
+        argue that “designing digital environments that foster well-being
+        instead of addiction could reduce loneliness globally” (Twenge and
+        Campbell). Apps like TikTok, Instagram, and X (formerly Twitter) could
+        include screen-time reminders, promote conversations about mental
+        health, and create features that encourage meaningful conversations
+        instead of just likes and views.
+      </p>
+    </section>
+
+    <!-- SECTION 5: Personal Connection -->
+    <section id="personal" class="personal">
+      <span class="pill">Personal Connection</span>
+      <h2>Why Does This Question Matter to Me Personally?</h2>
+      <p>
+        For me, this issue matters because I am one of the millions who have
+        felt the effects of loneliness due to social media, even though I am
+        surrounded by dozens of people. There were times I was active on social
+        media, messaging people, staying “connected,” yet I still felt lonely
+        because I was disconnected in real life. The more time I spent online,
+        the more I compared myself to my peers who seemed to have perfect lives
+        or met personal goals. Instead of helping, technology and social media
+        made me feel like I wasn’t doing enough—like I was falling short.
+      </p>
+      <p>
+        After doing research on this topic though, I understand what the Surgeon
+        General meant about screen time replacing shared time (U.S. Surgeon
+        General). Whenever I spent face-to-face time with family, worked out
+        with friends, or even had a short conversation with someone at work, the
+        loneliness faded a bit. This is why this topic is meaningful to me. I
+        have seen firsthand how easy it is to feel isolated even if you’re not
+        “alone,” and I know that real connection feels different and more
+        rewarding than anything technology and social media can provide.
+      </p>
+    </section>
+
+    <!-- SECTION 6: Future -->
+    <section id="future">
+      <span class="pill">Looking Ahead</span>
+      <h2>Why Does the Future of Human Connection Still Look Hopeful?</h2>
+      <p>
+        Despite how serious the loneliness epidemic is, the future is very
+        promising for future generations. The <em>Harvard Gazette</em> said,
+        “The loneliness epidemic has sparked a global awakening about what real
+        connection means” (Harvard Gazette). As loneliness is acknowledged more
+        openly, schools, governments, and workplaces are beginning to create
+        programs that combat loneliness by fostering community and mental health
+        initiatives.
+      </p>
+      <p>
+        Many people are realizing that nonstop busyness and constant interaction
+        on social media aren’t enough to meet our basic human need for real
+        connection. Right now, there is a cultural shift occurring toward
+        empathy, presence, and genuine community. If individuals, local
+        communities, and major technology companies work together to address the
+        loneliness epidemic, we can rebuild meaningful, authentic connections.
+      </p>
+    </section>
+
+    <!-- SECTION 7: Works Cited -->
+    <section id="works" class="works-cited">
+      <span class="pill">Works Cited</span>
+      <h2>Works Cited</h2>
+      <p>
+        Harvard Gazette. “The Loneliness Epidemic Has Sparked a Global
+        Awakening about What Real Connection Means.” <em>Harvard Gazette</em>,
+        2023.
+      </p>
+      <p>
+        Killgore, William D. S., et al. “Loneliness: The Prevalence of Social
+        Isolation after COVID-19.” <em>Psychiatry Research</em>, vol. 290, 2020.
+      </p>
+      <p>
+        Murthy, Vivek H. <em>Surgeon General’s Advisory on Social Connection and
+        Community</em>. U.S. Department of Health and Human Services, 2023.
+      </p>
+      <p>
+        Murthy, Vivek H. “To Heal Loneliness, We Must Replace Screen Time with
+        Shared Time.” <em>U.S. Department of Health and Human Services</em>,
+        2022.
+      </p>
+      <p>
+        Psychology Today. “Loneliness.” <em>Psychology Today</em>.
+      </p>
+      <p>
+        Turkle, Sherry. <em>Reclaiming Conversation: The Power of Talk in a
+        Digital Age</em>. Penguin Press, 2017.
+      </p>
+      <p>
+        Turkle, Sherry. “Connected, but Alone?” <em>TED</em>, 2012.
+      </p>
+      <p>
+        Twenge, Jean M., and W. Keith Campbell. “Associations between Screen
+        Time and Lower Psychological Well-Being among Children and Adolescents.”
+        <em>Preventive Medicine Reports</em>, vol. 12, 2018, pp. 271–283.
+      </p>
+      <p>
+        U.S. Surgeon General. <em>Our Epidemic of Loneliness and Isolation: The
+        U.S. Surgeon General’s Advisory</em>. U.S. Department of Health and
+        Human Services, 2023.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Built from the work of Jon Santana for College Writing · 2025
+  </footer>
+</body>
+</html>
